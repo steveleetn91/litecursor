@@ -1,0 +1,23 @@
+{
+  "name": "litecursor",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "dotenv": "^16.4.7",
+    "figlet": "^1.8.0",
+    "gradient-string": "^3.0.0",
+    "inquirer": "^12.3.0",
+    "mysql2": "^3.4.2",
+    "openai": "^4.80.1",
+    "shell-quote": "^1.8.3"
+  }
+}
