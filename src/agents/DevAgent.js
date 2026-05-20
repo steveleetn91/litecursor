@@ -2,7 +2,14 @@ import "dotenv/config";
 import OpenAI from "openai";
 import {askSkill} from "./SkillAgent.js";
 import fs from "fs";
-
+import {
+  assistantLine,
+  divider,
+  drawHeader,
+  error,
+  info,
+  userLine
+} from "../ui.js";
 const client = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY
 });
@@ -14,6 +21,7 @@ async function loadSkills(messages) {
    for (const skill of skillArray) {
      skillData += fs.readFileSync(`./src/skills/${skill}/prompt.md`, "utf-8");
    }
+   info(`Selected skills: ${skillArray.join(", ")}`);
    return skillData;
 }
 
