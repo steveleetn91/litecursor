@@ -10,3 +10,11 @@ LiteCursor is my attempt to make a minimal AI coding assistant that does the ess
 ## Screenshot 
 
 <img src="./s1.png" />
+
+## How to run? 
+
+You need copy `.env.example` to `.env` and setup API key and MYSQL database at `.env`.
+You need add directory project path at `.env` before start.
+
+- npm install 
+- npm run start
