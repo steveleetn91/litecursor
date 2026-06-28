@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
     "dev": "concurrently vite --config ./assets/vite.config.js",
+    "build:bundle": "vite build --config ./assets/vite.config.js",
     "build": "vite build --config ./assets/vite.config.js && electron-builder"
   },
   "author": "",
