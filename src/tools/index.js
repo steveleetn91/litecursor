@@ -2,6 +2,7 @@ import {
   listFiles,
   readFile,
   writeFile,
+  replaceInFile,
   fileExists,
   getProjectPath
 } from "./filesystem.js";
@@ -32,8 +33,19 @@ export const tools = {
 
   write_file: {
     description: "Write content to a file in the project.",
-    run: async ({ path, content }) => {
-      return writeFile(path, content);
+    run: async ({ path, content, overwrite_existing = false }) => {
+      return writeFile(path, content, {
+        overwriteExisting: overwrite_existing,
+      });
+    }
+  },
+
+  replace_in_file: {
+    description: "Replace an exact text block inside an existing project file.",
+    run: async ({ path, old_content, new_content, replace_all = false }) => {
+      return replaceInFile(path, old_content, new_content, {
+        replaceAll: replace_all,
+      });
     }
   },
 
@@ -57,7 +69,7 @@ export async function runTool(name, args = {}) {
   const tool = tools[name];
 
   if (!tool) {
-    throw new Error(`Tool does not exist: ${name}`);
+    throw `Tool does not exist: ${name}`;
   }
 
   return await tool.run(args);

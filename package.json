@@ -1,23 +1,45 @@
 {
   "name": "litecursor",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/main.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "electron .",
+    "dev": "concurrently vite --config ./assets/vite.config.js",
+    "build": "vite build --config ./assets/vite.config.js && electron-builder"
   },
   "author": "",
   "license": "MIT",
   "description": "",
   "dependencies": {
+    "@inquirer/prompts": "^8.5.2",
+    "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.1",
+    "chai": "^6.2.2",
     "chalk": "^5.4.1",
+    "cors": "^2.8.6",
     "dotenv": "^16.4.7",
+    "express": "^5.2.1",
     "figlet": "^1.8.0",
     "gradient-string": "^3.0.0",
     "inquirer": "^12.3.0",
+    "jsonrepair": "^3.14.1",
+    "mocha": "^11.7.6",
     "mysql2": "^3.4.2",
+    "node-telegram-bot-api": "^0.67.0",
     "openai": "^4.80.1",
-    "shell-quote": "^1.8.3"
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "shell-quote": "^1.8.3",
+    "tidy-html5": "^0.1.1",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.3",
+    "concurrently": "^10.0.3",
+    "electron": "^42.5.0",
+    "electron-builder": "^26.15.3",
+    "vite": "^8.1.0"
   }
 }
